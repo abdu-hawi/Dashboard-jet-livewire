@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UploadController;
 use App\Models\Setting;
+use Illuminate\Support\Facades\Request;
 
 if(!function_exists('check_gate')){
     function check_gate($ability){
@@ -23,6 +24,15 @@ if(!function_exists('check_gate')){
     if(!function_exists('setting')){
         function setting(){
             return Setting::orderBy('id','desc')->first();
+        }
+    }
+    if(!function_exists('active_menu')){
+        function active_menu($link){
+            if (preg_match('/'.$link.'/i',Request::segment(2))){
+                return ['active disabled' , 'menu-open' , 'display: block;'];
+            }else{
+                return ['','',''];
+            }
         }
     }
 }

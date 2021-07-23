@@ -5,5 +5,8 @@ return [
         'Settings' => 'الاعدادات',
         "Web logo" => 'شعار الموقع',
         "Web icon" => 'أيقونة الموقع'
+    ],
+    'sidebar' => [
+        'Dashboard' => 'لوحة التحكم',
     ]
 ];

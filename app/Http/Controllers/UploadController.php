@@ -14,16 +14,16 @@ class UploadController extends Controller
         }
         if (request()->has($data['file']) && $data['upload_type'] == 'single'){
             Storage::has($data['delete_file'])?Storage::delete($data['delete_file']):'';
-            return request()->file($data['file'])->store($data['path']);
+            return request()->file($data['file'])->store('public/'.$data['path']);
         }elseif (request()->has($data['file']) && $data['upload_type'] == 'files'){
             $file = request()->file($data['file']);
             $hashName = $file->hashName();
-            $file->store($data['path']);
+            $file->store('public/'.$data['path']);
             DB::table('files')->insert([
                 'id'=>$data['id'],
-                'path'=>$data['path'].'/'.$hashName,
+                'path'=>'public/'.$data['path'].'/'.$hashName,
             ]);
-            return $data['path'].'/'.$hashName;
+            return 'public/'.$data['path'].'/'.$hashName;
         }
     }
 }

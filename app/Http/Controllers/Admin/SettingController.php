@@ -53,6 +53,6 @@ class SettingController extends Controller
         }
         Setting::orderBy('id','desc')->update($data);
         session()->flash('success',trans('admin.Update successfully'));
-        return redirect('settings');
+        return redirect(route('admin.settings'));
     }
 }

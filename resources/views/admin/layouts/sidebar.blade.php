@@ -11,14 +11,14 @@
         @endif
     </a>
 
-    <!-- Sidebar op -->
+    <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="info">
-                <a href="javascript:void(0)" class="d-block">{!! ucfirst(auth()->user()->role->name) !!}</a>
-            </div>
-        </div>
+{{--        <div class="user-panel mt-3 pb-3 mb-3 d-flex">--}}
+{{--            <div class="info">--}}
+{{--                <a href="javascript:void(0)" class="d-block">{!! ucfirst(auth()->user()->role->name) !!}</a>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
@@ -26,7 +26,18 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
 
-
+                <li class="nav-item">
+                    <a href="{!! route('admin.dashboard') !!}" class="nav-link {!! active_menu('dashboard')[0] !!}">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>{!! trans('admin.sidebar.Dashboard') !!}</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{!! route('admin.settings') !!}" class="nav-link {!! active_menu('settings')[0] !!}">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>{!! trans('admin.setting.Settings') !!}</p>
+                    </a>
+                </li>
 {{--
 
                 <li class="nav-item">
@@ -61,15 +72,6 @@
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             المتطوعين
-                        </p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{!! url('/dashboard') !!}" class="nav-link {!! active_menu('dashboard')[0] !!}">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            التقارير
                         </p>
                     </a>
                 </li>

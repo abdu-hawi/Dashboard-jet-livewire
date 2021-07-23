@@ -72,7 +72,8 @@ a:hover {
 
 .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active, .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
     /*background-color: #797103;*/
-    background-color: #f89631;
+    /*background-color: #f89631;*/
+    background-color: #05b5fd;
     color: #fff;
 }
 
@@ -98,6 +99,11 @@ div.dataTables_wrapper div.dataTables_length select {
 }
 [class*="sidebar-dark-"] {
     background-color: #022939;
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
 }
 
 /*[class*="sidebar-dark-"] .nav-sidebar > .nav-item:hover > .nav-link {*/

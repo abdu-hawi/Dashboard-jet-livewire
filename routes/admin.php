@@ -10,5 +10,5 @@ Route::get('auth',function (){
 })->name('auth');
 
 Route::get('dashboard', [DashboardController::class,'index'])->name('dashboard');
-Route::get('settings',[SettingController::class,'setting']);
+Route::get('settings',[SettingController::class,'setting'])->name('settings');
 Route::post('settings',[SettingController::class,'setting_save']);
