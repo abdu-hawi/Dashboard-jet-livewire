@@ -11,7 +11,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <title>{!! $title ?? (setting()->site_name_en ?? '') !!}</title>
 
-    <link rel="icon" href="{!! !empty(setting()->icon) ? Storage::url('storage/'.setting()->icon) : '' !!}" type="image/x-icon">
+    <link rel="icon" href="{!! !empty(setting()->icon) ? Storage::url(setting()->icon) : '' !!}" type="image/x-icon">
+    <link rel="icon" href="{!! asset('design/image/icon.ico') !!}">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{!! asset('/design/plugins/fontawesome-free/css/all.min.css') !!}">

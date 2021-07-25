@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="{!! url('') !!}" class="brand-link">
         @if(!empty(setting()->icon))
-            <img src="{!! Storage::url('storage/'.setting()->icon) !!}" alt="مبادرة مليون متطوع" class="brand-image img-circle elevation-3"
+            <img src="{!! Storage::url(setting()->icon) !!}" alt="مبادرة مليون متطوع" class="brand-image img-circle elevation-3"
                  style="opacity: .8">
             <span class="brand-text font-weight-light">{!! auth()->user()->name !!}</span>
         @else
